@@ -86,7 +86,7 @@ class NLayerDiscriminator(BaseNetwork):
 
         for n in range(1, opt.n_layers_D):
             nf_prev = nf
-            nf = min(nf * 2, 512)
+            nf = min(nf * 2, 1024)
             stride = 1 if n == opt.n_layers_D - 1 else 2
             sequence += [[norm_layer(nn.Conv2d(nf_prev, nf, kernel_size=kw,
                                                stride=stride, padding=padw)),
